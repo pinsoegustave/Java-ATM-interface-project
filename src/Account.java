@@ -1,3 +1,5 @@
+// Account class helps to keep the user information.
+
 public class Account {
 
     private String firstName;

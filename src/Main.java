@@ -3,20 +3,24 @@ import java.util.Scanner;
 
 public class Main {
 
+//    Variables declared which are used in the program
     static Scanner scanner;
-    static int lastaccid = 0;
+    static int lastaccid = 1;
     private static ArrayList<Account> accounts;
 
+//    Main function which runs the whole program.
     public static void main(String[] args) {
 
         accounts = new ArrayList<>();
         scanner = new Scanner(System.in);
 
-            System.out.println("Welcome to bank management system");
+//        First instructions given to the user after reaching the program.
+            System.out.println("Welcome to ATM Interface System");
             System.out.println("1. Create new account");
             System.out.println("2. Login");
             System.out.println("3. Exit");
 
+//            Switch case which helps to choose which instructions to be run by the user.
             int i = scanner.nextInt();
             switch (i) {
                 case 1: createNewAcc();
@@ -26,7 +30,7 @@ public class Main {
             }
 
     }
-
+//  Method for creating a new user account
     private static void createNewAcc() {
         System.out.println("Enter firstname: ");
         String firstName = scanner.next();
@@ -52,8 +56,9 @@ public class Main {
         showMenu(acc);
     }
 
+//    Method used to log in the user to his account
     private static void login() {
-        System.out.println(" Enter account id: ");
+        System.out.println(" Enter account id :  ");
         int id = scanner.nextInt();
         System.out.println("Enter passcode: ");
         int passcode = scanner.nextInt();
@@ -73,13 +78,15 @@ public class Main {
         }
 
     }
-
+// Show menu method is for the first screen a user see after signing/logging in to hi/her account.
     private static void showMenu(Account acc) {
         int j = 0;
         do {
+            System.out.println("ATM Interface System");
         System.out.println("Welcome "+ acc.getFirstName()+ " " +acc.getLastName() + "!\n");
         System.out.println("1. Deposit\n2. Withdraw\n3. Balance\n4. Exit");
 
+//        Switch case to run the option/instruction entered by the user.
         j = scanner.nextInt();
         switch (j) {
             case 1:
